@@ -1,15 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.print("Pizza Type 'Veg'' or 'Non-Veg' : ");
+        String input = scanner.next().trim();
+        boolean pizzaType = input.equalsIgnoreCase("Veg");
+
+        System.out.print("Extra Cheese 'Yes' or 'No' : ");
+        String extraCheese = scanner.next().trim();
+        boolean isExtraCheeseAdded = extraCheese.equalsIgnoreCase("Yes");
+
+        System.out.print("Addons 'Yes' or 'No' : ");
+        String addOns = scanner.next().trim();
+        boolean isAddOnsAdded = addOns.equalsIgnoreCase("Yes");
+
+        System.out.print("Door Delivery 'Yes' or 'No' : ");
+        String doorDelivery = scanner.next().trim();
+        boolean isDeliveryChargesIncluded = doorDelivery.equalsIgnoreCase("Yes");
+
+       Pizza pizza = new Pizza(pizzaType);
+       pizza.extraCheese(isExtraCheeseAdded);
+       pizza.addOns(isAddOnsAdded);
+       pizza.doorDelivery(isDeliveryChargesIncluded);
+       pizza.bill();
+
     }
 }
