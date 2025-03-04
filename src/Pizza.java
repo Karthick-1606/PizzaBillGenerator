@@ -2,7 +2,7 @@ public class Pizza {
     private int price;
     private boolean veg;
     private int extraCheese;
-    private int addOns = 150;
+    private int addOns;
     private int doorDelivery = 75;
     private int basePizzaPrice;
     private boolean isExtraCheeseAdded;
@@ -15,11 +15,27 @@ public class Pizza {
     public void setPrice(int price) {
         this.price = price;
     }
+    public int getExtraCheese() {
+        return extraCheese;
+    }
+
+    public void setExtraCheese(int extraCheese) {
+        this.extraCheese = extraCheese;
+    }
+
+    public int getAddOns() {
+        return addOns;
+    }
+
+    public void setAddOns(int addOns) {
+        this.addOns = addOns;
+    }
 
     public Pizza(boolean veg) {
         this.veg = veg;
         this.price = (veg) ? 300 : 500;
         basePizzaPrice = this.price;
+        System.out.println("Pizza Price: " + basePizzaPrice);
     }
 
     public void extraCheese(boolean isExtraCheeseAdded) {
